@@ -1,29 +1,30 @@
-export const Profile = ({username, tag, location, avatar, stats}) => {
-    return <div className="profile">
-  <div className="description">
+import { ProfileContainer, ProfileName, StatsItem } from "./Profile.styled"
+
+export const Profile = ({ username, tag, location, avatar, stats }) => {
+    return <ProfileContainer>
+  <div>
     <img
       src={avatar}
       alt="User avatar"
-      className="avatar"
     />
-    <p className="name">{username}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
+    <ProfileName>{username}</ProfileName>
+    <p>@{tag}</p>
+    <p>{location}</p>
   </div>
 
   <ul className="stats">
-    <li>
-      <span className="label">Followers</span>
-      <span className="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span className="label">Views</span>
-      <span className="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span className="label">Likes</span>
-      <span className="quantity">{stats.likes}</span>
-    </li>
+    <StatsItem>
+      <span>Followers</span>
+      <span>{stats.followers}</span>
+    </StatsItem>
+    <StatsItem>
+      <span>Views</span>
+      <span>{stats.views}</span>
+    </StatsItem>
+    <StatsItem>
+      <span>Likes</span>
+      <span>{stats.likes}</span>
+    </StatsItem>
   </ul>
-</div>
+</ProfileContainer>
 }

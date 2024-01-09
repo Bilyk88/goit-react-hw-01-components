@@ -1,15 +1,21 @@
-export const Statistics = ({title, stats}) => {
-    return <section className="statistics">
-  <h2 className="title">{title}</h2>
+import { StatisticsContainer, StatisticsList, StatisticsListItem } from "./Statistics.styled"
 
-    <ul className="stat-list">{
+export const Statistics = ({title, stats}) => {
+  return <StatisticsContainer className="statistics">
+    {title && <h2 className="title">{title}</h2>}
+  
+    <StatisticsList>{
         stats.map(({id, label, percentage}) => {
-            return <li className="item" key={id}>
-                <span className="label">{label}</span>
-                <span className="percentage">{percentage}%</span>
+            return <li key={id}>
+                <span>{label}</span>
+                <span>{percentage}%</span>
             </li>
         })
     }
-  </ul>
-</section>
+  </StatisticsList>
+</StatisticsContainer>
 }
+
+// // {unreadMessages.length > 0 && (
+//         <p>You have {unreadMessages.length} unread messages.</p>
+//       // )}

@@ -1,8 +1,12 @@
+import { FriendItem, FriendItemStatus } from "./FriendListItem.styled"
+
 export const FriendListItem = ({avatar, name, isOnline}) => {
-    return <li className="item">
-  <span className="status"></span>
+    return <FriendItem>
+        <FriendItemStatus isOnline={isOnline}>
+            {isOnline ? true : false}
+  </FriendItemStatus>
   <img className="avatar" src={avatar} alt="User avatar" width="48" />
-        <p className="name">{name}</p>
-    </li>
+        <p>{name}</p>
+    </FriendItem>
     
 }

@@ -15,9 +15,11 @@ export const App = () => {
       style={{
 
         height: '100vh',
+        width: '400px',
         // display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        margin: 'auto',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         fontSize: 18,
         color: '#010101'
       }}
@@ -31,7 +33,7 @@ export const App = () => {
     />
 
     <Statistics title="Upload stats" stats={data} />
-      {/* <Statistics stats={data} /> */}
+    {/* <Statistics stats={data} /> */}
       
     <FriendList friends={friends} />
       

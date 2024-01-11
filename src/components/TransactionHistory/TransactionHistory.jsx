@@ -1,7 +1,7 @@
 import { TransactionTable } from "./TransactionHistory.styled"
 
 export const TransactionHistory = ({items}) => {
-return <TransactionTable className="transaction-history">
+return <TransactionTable>
     <thead>
         <tr>
         <th>Type</th>

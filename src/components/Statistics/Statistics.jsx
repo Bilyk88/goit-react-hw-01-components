@@ -1,21 +1,17 @@
 import { StatisticsContainer, StatisticsList, StatisticsListItem } from "./Statistics.styled"
 
 export const Statistics = ({title, stats}) => {
-  return <StatisticsContainer className="statistics">
+  return <StatisticsContainer>
     {title && <h2 className="title">{title}</h2>}
   
     <StatisticsList>{
         stats.map(({id, label, percentage}) => {
-            return <li key={id}>
+            return <StatisticsListItem key={id}>
                 <span>{label}</span>
                 <span>{percentage}%</span>
-            </li>
+            </StatisticsListItem>
         })
     }
   </StatisticsList>
 </StatisticsContainer>
 }
-
-// // {unreadMessages.length > 0 && (
-//         <p>You have {unreadMessages.length} unread messages.</p>
-//       // )}
